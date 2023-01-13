@@ -2,7 +2,7 @@ async function getdata(uId){
     const email = await new Promise((resolve) => {
         setTimeout(() => {
             console.log("Fetched the data!");
-            return "skc@gmail.com";
+            return resolve("skc@gmail.com");
              }, 4000);
         
     });
@@ -10,7 +10,10 @@ async function getdata(uId){
 }
 
 console.log("start");
-getdata("skc").then((email) => {
-    console.log("Email id of the user id is: "+email);
-});
+async function output(){
+   let email = await getdata("skc")
+   console.log("Email id of the user id is: "+email);    
+}
+
+output();
 console.log("end");
