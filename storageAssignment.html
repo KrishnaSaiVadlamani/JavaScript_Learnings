@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>Storage Assignment</title>
+  </head>
+  <body>
+    <h1>Local Score: <span id="local-score">0</span></h1>
+    <h1>Session Score: <span id="session-score">0</span></h1>
+    <button id="increment-button">Increment</button>
+
+    <script>
+      let localScore = localStorage.getItem("localScore") || 0;
+      let sessionScore = sessionStorage.getItem("sessionScore") || 0;
+
+      document.getElementById("local-score").innerHTML = localScore;
+      document.getElementById("session-score").innerHTML = sessionScore;
+
+      let incrementButton = document.getElementById("increment-button");
+
+      incrementButton.addEventListener("click", function() {
+        localScore++;
+        sessionScore++;
+
+        document.getElementById("local-score").innerHTML = localScore;
+        document.getElementById("session-score").innerHTML = sessionScore;
+
+        localStorage.setItem("localScore", localScore);
+        sessionStorage.setItem("sessionScore", sessionScore);
+      });
+    </script>
+  </body>
+</html>
