@@ -10,7 +10,7 @@ async function getdata(uId){
 }
 
 console.log("start");
-async function output(){
+const output = async() => {
    let email = await getdata("skc")
    console.log("Email id of the user id is: "+email);    
 }
